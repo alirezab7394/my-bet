@@ -1,0 +1,91 @@
+export type Identifier = string;
+
+export type MatchStatus = "scheduled" | "in_progress" | "final";
+
+export interface Team {
+    id: Identifier;
+    name: string;
+    shortName: string;
+    logoUrl: string;
+}
+
+export interface Score {
+    home: number;
+    away: number;
+}
+
+export interface Match {
+    id: Identifier;
+    slug: string; // e.g., girona-fc-vs-real-betis-sevilla
+    homeTeamId: Identifier;
+    awayTeamId: Identifier;
+    startTimeIso: string; // ISO 8601
+    status: MatchStatus;
+    finalScore?: Score;
+}
+
+export type PastGameResult = "W" | "L" | "D";
+
+export interface PastGame {
+    id: Identifier;
+    teamId: Identifier;
+    opponentId: Identifier;
+    dateIso: string;
+    result: PastGameResult;
+    score: {
+        team: number;
+        opponent: number;
+    };
+}
+
+export interface OddsPlatform {
+    id: Identifier;
+    name: string;
+    logoUrl?: string;
+}
+
+export interface OddsRow {
+    platformId: Identifier;
+    matchId: Identifier;
+    homeWin: number; // decimal odds
+    draw: number;
+    awayWin: number;
+    lastUpdatedIso: string;
+}
+
+export interface Article {
+    id: Identifier;
+    title: string;
+    url: string;
+    publishedAtIso: string;
+    source: string;
+    matchId?: Identifier;
+    teamIds?: Identifier[];
+}
+
+export interface Post {
+    id: Identifier;
+    title: string;
+    body: string;
+    author: string;
+    createdAtIso: string;
+    updatedAtIso: string;
+}
+
+export interface Comment {
+    id: Identifier;
+    postId: Identifier;
+    author: string;
+    body: string;
+    createdAtIso: string;
+}
+
+export interface Signal {
+    id: Identifier;
+    matchId: Identifier;
+    title: string;
+    body: string;
+    confidencePct: number; // 0..100
+}
+
+
