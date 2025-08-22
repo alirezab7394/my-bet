@@ -9,7 +9,6 @@ import Signals from "@/components/Signals";
 import SignalsSkeleton from "@/components/Signals/Skeleton";
 import { Suspense } from "react";
 import { getMatchupAggregate } from "@/features/matchup/api";
-import SocketTester from "@/components/SocketTester";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -46,7 +45,6 @@ export default async function Page(props: {
       <Suspense fallback={<SignalsSkeleton />}>
         <Signals matchId={agg.match.id} />
       </Suspense>
-      <SocketTester />
     </div>
   );
 }
