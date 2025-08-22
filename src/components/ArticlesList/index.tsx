@@ -33,11 +33,11 @@ export default function ArticlesList({
   const canNext = page < totalPages;
 
   return (
-    <div className={className}>
+    <div className={className} role="region" aria-label="Related articles">
       {isPending ? (
         <ArticlesListSkeleton hidePagination />
       ) : (
-        <ul className="space-y-4">
+        <ul className="space-y-4" aria-live="polite">
           {pageItems.map((a) => (
             <ArticleItem key={a.id} article={a} />
           ))}
@@ -45,7 +45,7 @@ export default function ArticlesList({
       )}
 
       {totalPages > 1 && (
-        <Pagination className="mt-6">
+        <Pagination className="mt-6" aria-label="Pagination">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious

@@ -16,15 +16,15 @@ export default function MatchHeader({
   return (
     <Card className={cn("w-full", className)}>
       <CardContent className="p-0">
-        <div className="border-b px-6 py-8 text-center">
+        <div className="border-b px-4 py-6 text-center md:px-6 md:py-8">
           <MatchInfo
             startTimeIso={match.startTimeIso}
             isFinal={Boolean(isFinal)}
           />
 
-          <div className="grid grid-cols-3 items-center">
+          <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
             <TeamItem
-              className="justify-self-start"
+              className="justify-self-center md:justify-self-start"
               team={homeTeam}
               mode="header"
             />
@@ -42,7 +42,7 @@ export default function MatchHeader({
               )}
             </div>
             <TeamItem
-              className="justify-self-end"
+              className="justify-self-center md:justify-self-end"
               team={awayTeam}
               align="end"
               mode="header"

@@ -67,9 +67,15 @@ export default async function OddsTable({
         </div>
 
         <div className="pt-4 text-center">
-          <button className="text-primary text-sm hover:underline">
+          <button
+            className="text-primary text-sm hover:underline"
+            aria-label="View more odds"
+          >
             View More Odds
           </button>
+        </div>
+        <div className="sr-only" aria-live="polite">
+          Odds updated
         </div>
       </CardContent>
     </Card>
