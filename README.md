@@ -1,4 +1,8 @@
-MyBet – Betting Matchup + Blog demo built with [Next.js](https://nextjs.org), Tailwind CSS, and shadcn/ui. Deployed at [my-bet.vercel.app](https://my-bet.vercel.app/).
+MyBet – Betting Matchup + Blog demo built with [Next.js](https://nextjs.org), Tailwind CSS, and shadcn/ui.
+
+### Live URL
+
+**[my-bet.vercel.app](https://my-bet.vercel.app/)**
 
 ## Getting Started
 
