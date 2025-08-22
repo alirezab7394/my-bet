@@ -30,7 +30,6 @@ export function Countdown({
     return (
       <div
         className={cn("flex items-center gap-2 text-sm", className)}
-        aria-live="polite"
         aria-busy
       >
         <TimeBox label="D" value={0} />
@@ -50,10 +49,7 @@ export function Countdown({
   }
   const { days, hours, minutes, seconds } = formatRemaining(remaining);
   return (
-    <div
-      className={cn("flex items-center gap-2 text-sm", className)}
-      aria-live="polite"
-    >
+    <div className={cn("flex items-center gap-2 text-sm", className)}>
       <TimeBox label="D" value={days} />
       <TimeBox label="H" value={hours} />
       <TimeBox label="M" value={minutes} />
