@@ -16,9 +16,6 @@ export default function Header({ className }: HeaderProps) {
           <Button asChild variant="ghost" size="sm">
             <Link href="/matchups">Matchups</Link>
           </Button>
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/posts">Posts</Link>
-          </Button>
           <ThemeToggle />
         </nav>
       </div>
