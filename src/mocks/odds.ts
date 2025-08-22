@@ -1,4 +1,4 @@
-import { OddsPlatform, OddsRow } from "../types/domain";
+import { OddsAggregateMarket, OddsPlatform, OddsRow, OddsScope } from "../types/domain";
 
 export const ODDS_PLATFORMS: OddsPlatform[] = [
     { id: "bet365", name: "Bet365" },
@@ -34,6 +34,23 @@ export const ODDS_BY_MATCH: Record<string, OddsRow[]> = {
             lastUpdatedIso: new Date().toISOString(),
         },
     ],
+};
+
+export const ODDS_AGGREGATE_BY_MATCH_SCOPE: Record<string, Partial<Record<OddsScope, OddsAggregateMarket>>> = {
+    match_001: {
+        full_game: {
+            total: { line: 3.5, overPrice: -102, underPrice: -109 },
+            moneyline: { home: -380, away: 950 },
+        },
+        first_half: {
+            total: { line: 1.5, overPrice: -110, underPrice: -105 },
+            moneyline: { home: -180, away: 400 },
+        },
+        second_half: {
+            total: { line: 1.5, overPrice: -108, underPrice: -103 },
+            moneyline: { home: -150, away: 350 },
+        },
+    },
 };
 
 

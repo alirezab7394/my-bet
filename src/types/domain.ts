@@ -53,6 +53,20 @@ export interface OddsRow {
     lastUpdatedIso: string;
 }
 
+export type OddsScope = "full_game" | "first_half" | "second_half";
+
+export interface OddsAggregateMarket {
+    total: {
+        line: number; // e.g., 3.5
+        overPrice: number; // American e.g., -102
+        underPrice: number; // American e.g., -109
+    };
+    moneyline: {
+        home: number; // American e.g., -380
+        away: number; // American e.g., +950
+    };
+}
+
 export interface Article {
     id: Identifier;
     title: string;

@@ -1,18 +1,10 @@
 import { sleep } from "../../lib/sleep";
 import { getArticlesForMatch } from "../../mocks/articles";
 import { MATCHES, PAST_GAMES_BY_TEAM } from "../../mocks/matches";
-import { ODDS_BY_MATCH, ODDS_PLATFORMS } from "../../mocks/odds";
+import { ODDS_AGGREGATE_BY_MATCH_SCOPE, ODDS_BY_MATCH, ODDS_PLATFORMS } from "../../mocks/odds";
 import { SIGNALS_BY_MATCH } from "../../mocks/signals";
 import { TEAMS, findTeamById } from "../../mocks/teams";
-import {
-    Article,
-    Identifier,
-    Match,
-    OddsPlatform,
-    OddsRow,
-    PastGame,
-    Team,
-} from "../../types/domain";
+import { Article, Identifier, Match, OddsAggregateMarket, OddsPlatform, OddsRow, OddsScope, PastGame, Team } from "../../types/domain";
 
 const DEFAULT_DELAY_MS = 200;
 
@@ -47,6 +39,14 @@ export async function getOdds(matchId: Identifier): Promise<{
 }> {
     await sleep(DEFAULT_DELAY_MS);
     return { platforms: ODDS_PLATFORMS, rows: ODDS_BY_MATCH[matchId] ?? [] };
+}
+
+export async function getAggregateOdds(
+    matchId: Identifier,
+    scope: OddsScope
+): Promise<OddsAggregateMarket | undefined> {
+    await sleep(DEFAULT_DELAY_MS);
+    return ODDS_AGGREGATE_BY_MATCH_SCOPE[matchId]?.[scope];
 }
 
 export async function getArticles(matchId: Identifier): Promise<Article[]> {

@@ -3,7 +3,7 @@ import { MatchHeaderProps } from "./type";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import TeamItem from "./components/TeamItem";
+import TeamItem from "@/components/TeamItem";
 import MatchInfo from "./components/MatchInfo";
 
 export default function MatchHeader({
@@ -25,9 +25,8 @@ export default function MatchHeader({
           <div className="grid grid-cols-3 items-center">
             <TeamItem
               className="justify-self-start"
-              name={homeTeam.name}
-              logoUrl={homeTeam.logoUrl}
-              large
+              team={homeTeam}
+              mode="header"
             />
             <div className="justify-self-center">
               {isFinal ? (
@@ -44,10 +43,9 @@ export default function MatchHeader({
             </div>
             <TeamItem
               className="justify-self-end"
-              name={awayTeam.name}
-              logoUrl={awayTeam.logoUrl}
+              team={awayTeam}
               align="end"
-              large
+              mode="header"
             />
           </div>
         </div>
