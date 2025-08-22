@@ -18,11 +18,28 @@ export function Countdown({
   className,
 }: CountdownProps) {
   const target = useMemo(() => new Date(targetIso).getTime(), [targetIso]);
-  const [now, setNow] = useState<number>(Date.now());
+  const [now, setNow] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   useEffect(() => {
+    setIsMounted(true);
+    setNow(Date.now());
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
+  if (!isMounted) {
+    return (
+      <div
+        className={cn("flex items-center gap-2 text-sm", className)}
+        aria-live="polite"
+        aria-busy
+      >
+        <TimeBox label="D" value={0} />
+        <TimeBox label="H" value={0} />
+        <TimeBox label="M" value={0} />
+        <TimeBox label="S" value={0} />
+      </div>
+    );
+  }
   const remaining = target - now;
   if (remaining <= 0) {
     return (
