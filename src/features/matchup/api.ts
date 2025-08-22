@@ -14,7 +14,7 @@ import {
     Team,
 } from "../../types/domain";
 
-const DEFAULT_DELAY_MS = 2000;
+const DEFAULT_DELAY_MS = 200;
 
 export async function listTeams(): Promise<Team[]> {
     await sleep(DEFAULT_DELAY_MS);

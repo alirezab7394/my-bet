@@ -6,6 +6,7 @@ export default function MatchHeaderSkeleton() {
     <Card>
       <CardContent className="p-0">
         <div className="border-b px-6 py-8 text-center">
+          {/* Keep overall spacing consistent with MatchInfo */}
           <div className="mx-auto mb-2 grid max-w-sm grid-cols-3 items-center text-xs">
             <div />
             <Skeleton className="mx-auto h-4 w-24" />

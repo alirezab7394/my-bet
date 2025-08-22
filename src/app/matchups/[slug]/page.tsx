@@ -26,6 +26,10 @@ export default async function Page({ params: { slug } }: Params) {
         homeTeam={agg.homeTeam}
         awayTeam={agg.awayTeam}
       />
+      <Suspense fallback={<OddsTableSkeleton />}>
+        {/* Async server component fetches internally */}
+        <OddsTable matchId={agg.match.id} />
+      </Suspense>
 
       <div className="grid gap-6 md:grid-cols-2">
         <Suspense
@@ -47,11 +51,6 @@ export default async function Page({ params: { slug } }: Params) {
           <Last10Games team={agg.awayTeam} opponentName={agg.homeTeam.name} />
         </Suspense>
       </div>
-
-      <Suspense fallback={<OddsTableSkeleton />}>
-        {/* Async server component fetches internally */}
-        <OddsTable matchId={agg.match.id} />
-      </Suspense>
 
       <Suspense fallback={<RelatedArticlesSkeleton />}>
         <RelatedArticles matchId={agg.match.id} />
