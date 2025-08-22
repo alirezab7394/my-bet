@@ -8,7 +8,7 @@ export default async function Signals({ matchId, className }: SignalsProps) {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Signals (Mock)</CardTitle>
+        <CardTitle>Signals </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {signals.map((s) => (
