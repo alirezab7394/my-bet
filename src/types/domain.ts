@@ -81,6 +81,9 @@ export interface Article {
     source: string;
     matchId?: Identifier;
     teamIds?: Identifier[];
+    imageUrl?: string;
+    author?: string;
+    category?: string;
 }
 
 export interface Post {
