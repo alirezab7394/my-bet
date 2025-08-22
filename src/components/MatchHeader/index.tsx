@@ -14,47 +14,93 @@ export default function MatchHeader({
   const isFinal = match.status === "final" && match.finalScore;
   return (
     <Card className={cn("w-full", className)}>
-      <CardContent className="flex flex-col gap-4 p-4 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-4">
-          <TeamItem name={homeTeam.name} logoUrl={homeTeam.logoUrl} />
-          <div className="text-muted-foreground">vs</div>
-          <TeamItem name={awayTeam.name} logoUrl={awayTeam.logoUrl} />
-        </div>
-        <div className="flex items-center gap-3">
-          {isFinal ? (
-            <Badge className="bg-primary text-primary-foreground">
-              Final {match.finalScore!.home} - {match.finalScore!.away}
-            </Badge>
-          ) : (
-            <div className="flex flex-col items-end">
-              <span className="text-muted-foreground text-xs">Kickoff</span>
-              <span className="text-sm font-medium">
-                {new Date(match.startTimeIso).toLocaleString()}
-              </span>
-              <Countdown
-                targetIso={match.startTimeIso}
-                onCompleteText="In progress"
-                className="mt-1"
+      <CardContent className="p-0">
+        <div className="border-b px-6 py-8 text-center">
+          {!isFinal ? (
+            <div className="text-muted-foreground mx-auto mb-2 grid max-w-sm grid-cols-3 items-center text-xs">
+              <div />
+              <div>
+                {new Date(match.startTimeIso).toLocaleDateString(undefined, {
+                  month: "short",
+                  day: "2-digit",
+                  year: "numeric",
+                })}
+              </div>
+              <div />
+              <div />
+              <div className="text-foreground text-base font-semibold">
+                {new Date(match.startTimeIso).toLocaleTimeString(undefined, {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </div>
+              <div />
+              <div />
+              <div>
+                {typeof (null as unknown) === "string" ? "" : "O/U 3.5"}
+              </div>
+              <div />
+            </div>
+          ) : null}
+
+          <div className="grid grid-cols-3 items-center">
+            <div className="justify-self-start">
+              <TeamItem name={homeTeam.name} logoUrl={homeTeam.logoUrl} large />
+            </div>
+            <div className="justify-self-center">
+              {isFinal ? (
+                <Badge className="bg-primary text-primary-foreground px-4 py-2 text-base">
+                  Final {match.finalScore!.home} - {match.finalScore!.away}
+                </Badge>
+              ) : (
+                <Countdown
+                  targetIso={match.startTimeIso}
+                  onCompleteText="In progress"
+                  className="mx-auto"
+                />
+              )}
+            </div>
+            <div className="justify-self-end">
+              <TeamItem
+                name={awayTeam.name}
+                logoUrl={awayTeam.logoUrl}
+                align="end"
+                large
               />
             </div>
-          )}
+          </div>
         </div>
       </CardContent>
     </Card>
   );
 }
 
-function TeamItem({ name, logoUrl }: { name: string; logoUrl: string }) {
+function TeamItem({
+  name,
+  logoUrl,
+  align = "start",
+  large = false,
+}: {
+  name: string;
+  logoUrl: string;
+  align?: "start" | "end";
+  large?: boolean;
+}) {
   return (
-    <div className="flex items-center gap-2">
+    <div
+      className={cn(
+        "flex items-center gap-3",
+        align === "end" && "flex-row-reverse text-right",
+      )}
+    >
       <Image
         src={logoUrl}
         alt={name}
-        width={32}
-        height={32}
+        width={large ? 48 : 32}
+        height={large ? 48 : 32}
         className="rounded-full"
       />
-      <span className="font-medium">{name}</span>
+      <span className="text-xl font-semibold">{name}</span>
     </div>
   );
 }

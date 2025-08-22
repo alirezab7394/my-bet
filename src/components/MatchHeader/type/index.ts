@@ -5,6 +5,7 @@ export interface MatchHeaderProps {
     homeTeam: Team;
     awayTeam: Team;
     className?: string;
+    overUnder?: number;
 }
 
 
