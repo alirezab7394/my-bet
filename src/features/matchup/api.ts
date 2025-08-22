@@ -31,6 +31,11 @@ export async function getMatchBySlug(slug: string): Promise<Match | undefined> {
     return MATCHES.find((m) => m.slug === slug);
 }
 
+export async function listMatches(): Promise<Match[]> {
+    await sleep(DEFAULT_DELAY_MS);
+    return MATCHES;
+}
+
 export async function getPastGames(teamId: Identifier): Promise<PastGame[]> {
     await sleep(DEFAULT_DELAY_MS);
     return PAST_GAMES_BY_TEAM[teamId] ?? [];
