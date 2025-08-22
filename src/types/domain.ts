@@ -30,11 +30,17 @@ export interface PastGame {
     id: Identifier;
     teamId: Identifier;
     opponentId: Identifier;
+    opponentName: string;
     dateIso: string;
     result: PastGameResult;
     score: {
         team: number;
         opponent: number;
+    };
+    betting?: {
+        totalType: "O" | "U" | "P";
+        totalLine: number;
+        moneyline: { result: "W" | "L"; price: number };
     };
 }
 

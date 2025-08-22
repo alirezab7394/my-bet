@@ -31,26 +31,13 @@ export default async function Page({ params: { slug } }: Params) {
         <OddsTable matchId={agg.match.id} />
       </Suspense>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Suspense
-          fallback={
-            <Last10GamesSkeleton
-              title={`Last 10 Games — ${agg.homeTeam.name}`}
-            />
-          }
-        >
-          <Last10Games team={agg.homeTeam} opponentName={agg.awayTeam.name} />
-        </Suspense>
-        <Suspense
-          fallback={
-            <Last10GamesSkeleton
-              title={`Last 10 Games — ${agg.awayTeam.name}`}
-            />
-          }
-        >
-          <Last10Games team={agg.awayTeam} opponentName={agg.homeTeam.name} />
-        </Suspense>
-      </div>
+      <Suspense
+        fallback={
+          <Last10GamesSkeleton title={`Last 10 Games — ${agg.homeTeam.name}`} />
+        }
+      >
+        <Last10Games team={agg.homeTeam} opponentTeam={agg.awayTeam} />
+      </Suspense>
 
       <Suspense fallback={<RelatedArticlesSkeleton />}>
         <RelatedArticles matchId={agg.match.id} />
