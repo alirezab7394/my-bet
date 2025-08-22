@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ArticleItemProps } from "./type";
+import { shimmerDataURL } from "@/lib/blur";
 
 export default function ArticleItem({ article, className }: ArticleItemProps) {
   return (
@@ -13,6 +14,10 @@ export default function ArticleItem({ article, className }: ArticleItemProps) {
             alt={article.title}
             width={160}
             height={120}
+            placeholder={article.imageUrl ? "blur" : "empty"}
+            blurDataURL={
+              article.imageUrl ? shimmerDataURL(160, 120) : undefined
+            }
             className="h-full w-full object-cover"
           />
         )}

@@ -42,6 +42,7 @@ export const ARTICLES: Article[] = [
         title: "Chelsea vs PSG: Tactical breakdown",
         url: "https://example.com/articles/chelsea-psg-tactics",
         publishedAtIso: new Date(Date.now() - 1000 * 60 * 60 * 36).toISOString(),
+        matchId: "match_001",
         source: "Tactical Hub",
         imageUrl: "https://picsum.photos/seed/a4/160/120",
         author: "Analyst Team",
@@ -53,6 +54,7 @@ export const ARTICLES: Article[] = [
         url: "https://example.com/articles/fluminense-chelsea-picks",
         publishedAtIso: new Date(Date.now() - 1000 * 60 * 60 * 48).toISOString(),
         source: "Betting Board",
+        matchId: "match_001",
         imageUrl: "https://picsum.photos/seed/a5/160/120",
         author: "Trenton Pruitt",
         category: "SOCCER",
@@ -63,6 +65,7 @@ export const ARTICLES: Article[] = [
         url: "https://example.com/articles/cwc-saturday-overview",
         publishedAtIso: new Date(Date.now() - 1000 * 60 * 60 * 60).toISOString(),
         source: "Global Football",
+        matchId: "match_001",
         imageUrl: "https://picsum.photos/seed/a6/160/120",
         author: "Jason Radowitz",
         category: "SOCCER",
@@ -73,6 +76,7 @@ export const ARTICLES: Article[] = [
         url: "https://example.com/articles/psg-bayern-value",
         publishedAtIso: new Date(Date.now() - 1000 * 60 * 60 * 72).toISOString(),
         source: "Market Watch",
+        matchId: "match_001",
         imageUrl: "https://picsum.photos/seed/a7/160/120",
         author: "BettingPros Staff",
         category: "SOCCER",
@@ -85,6 +89,7 @@ export const ARTICLES: Article[] = [
         source: "Scouting Notes",
         imageUrl: "https://picsum.photos/seed/a8/160/120",
         author: "Analyst Team",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -95,6 +100,7 @@ export const ARTICLES: Article[] = [
         source: "Form Guide",
         imageUrl: "https://picsum.photos/seed/a9/160/120",
         author: "Trenton Pruitt",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -105,6 +111,7 @@ export const ARTICLES: Article[] = [
         source: "Injury Wire",
         imageUrl: "https://picsum.photos/seed/a10/160/120",
         author: "News Desk",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -115,6 +122,7 @@ export const ARTICLES: Article[] = [
         source: "Trends Lab",
         imageUrl: "https://picsum.photos/seed/a11/160/120",
         author: "BettingPros Staff",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -125,6 +133,7 @@ export const ARTICLES: Article[] = [
         source: "Edge Finder",
         imageUrl: "https://picsum.photos/seed/a12/160/120",
         author: "Jason Radowitz",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -135,6 +144,7 @@ export const ARTICLES: Article[] = [
         source: "Data Room",
         imageUrl: "https://picsum.photos/seed/a13/160/120",
         author: "Analyst Team",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -145,6 +155,7 @@ export const ARTICLES: Article[] = [
         source: "xG Report",
         imageUrl: "https://picsum.photos/seed/a14/160/120",
         author: "Data Desk",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -155,6 +166,7 @@ export const ARTICLES: Article[] = [
         source: "Set Piece Lab",
         imageUrl: "https://picsum.photos/seed/a15/160/120",
         author: "BettingPros Staff",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -165,6 +177,7 @@ export const ARTICLES: Article[] = [
         source: "Keeper Corner",
         imageUrl: "https://picsum.photos/seed/a16/160/120",
         author: "News Desk",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -175,6 +188,7 @@ export const ARTICLES: Article[] = [
         source: "Market Watch",
         imageUrl: "https://picsum.photos/seed/a17/160/120",
         author: "Analyst Team",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -185,6 +199,7 @@ export const ARTICLES: Article[] = [
         source: "Discipline Journal",
         imageUrl: "https://picsum.photos/seed/a18/160/120",
         author: "Jason Radowitz",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -195,6 +210,7 @@ export const ARTICLES: Article[] = [
         source: "Performance Lab",
         imageUrl: "https://picsum.photos/seed/a19/160/120",
         author: "Trenton Pruitt",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -205,6 +221,7 @@ export const ARTICLES: Article[] = [
         source: "Modeling Notes",
         imageUrl: "https://picsum.photos/seed/a20/160/120",
         author: "BettingPros Staff",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -215,6 +232,7 @@ export const ARTICLES: Article[] = [
         source: "Prospect Report",
         imageUrl: "https://picsum.photos/seed/a21/160/120",
         author: "News Desk",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -225,6 +243,7 @@ export const ARTICLES: Article[] = [
         source: "Tactical Hub",
         imageUrl: "https://picsum.photos/seed/a22/160/120",
         author: "Analyst Team",
+        matchId: "match_001",
         category: "SOCCER",
     },
     {
@@ -235,6 +254,7 @@ export const ARTICLES: Article[] = [
         source: "Coaching Notes",
         imageUrl: "https://picsum.photos/seed/a23/160/120",
         author: "Coaches Panel",
+        matchId: "match_001",
         category: "SOCCER",
     },
 

@@ -10,11 +10,10 @@ import SignalsSkeleton from "@/components/Signals/Skeleton";
 import { Suspense } from "react";
 import { getMatchupAggregate } from "@/features/matchup/api";
 
-interface Params {
-  params: { slug: string };
-}
-
-export default async function Page({ params: { slug } }: Params) {
+export default async function Page(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await props.params;
   const agg = await getMatchupAggregate(slug);
   if (!agg) return <div className="p-6">Match not found</div>;
   // Components fetch their own data server-side via async.

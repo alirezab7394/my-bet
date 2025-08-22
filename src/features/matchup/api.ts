@@ -54,6 +54,20 @@ export async function getArticles(matchId: Identifier): Promise<Article[]> {
     return getArticlesForMatch(matchId);
 }
 
+export async function getArticlesPaged(
+    matchId: Identifier,
+    page: number,
+    pageSize: number
+): Promise<{ items: Article[]; total: number; hasMore: boolean }> {
+    await sleep(DEFAULT_DELAY_MS);
+    const all = getArticlesForMatch(matchId);
+    const start = (page - 1) * pageSize;
+    const items = all.slice(start, start + pageSize);
+    const total = all.length;
+    const hasMore = start + pageSize < total;
+    return { items, total, hasMore };
+}
+
 export async function getSignals(matchId: Identifier) {
     await sleep(DEFAULT_DELAY_MS);
     return SIGNALS_BY_MATCH[matchId] ?? [];
